@@ -1,0 +1,55 @@
+* About this Project
+  This project was for the making of small eight-page booklets for Vespers in the Traditional Latin Rite according to the Rubrics of 1962. These booklets are intended for the use of the faithful so that they might sing the public office with devotion and understanding by making available the vernacular with the chant that is sung in Latin. You can see some of the finished and printable booklets in the pdfs folder of this repository:
+
+[[file:imgs/example-0.png]] [[file:imgs/example-1.png]] [[file:imgs/example-2.png]] [[file:./imgs/example-5.png]]
+* Requirements
+** LuaLaTeX
+   You will need a latex installation along with the the luatex packages.
+** Gregorio 
+  The project requires the installation of Gregorio on your computer, which can be installed according to the directions on this website.
+** Optional: pdfbook
+   This program can make small booklets from the pdf file which can be printed on a duplex printer for folding and stapling.
+   
+* Using this Project
+** Compiling
+  The 'main.tex' collects all the different files into one document. You will need to compile the main.tex file with \write18 enabled, which is done like this in the project directory in linux:
+
+lualatex --shell-escape main
+
+** Making printable booklets
+   The printable booklets are made by simply passing the main.pdf to the 'pdfbook' program which can run simply from the commandline on the main.pdf which is produced:
+
+pdfbook main.pdf
+
+* Modifying
+  All the source code files are heavily commented. Here is a general idea of the structure:
+
+vesperale.sty: contains all the macro definitions for the layout of the psalms, hymns and text
+
+calendar.sty: contains macros for the calculation of which antiphon is proper for the Sunday
+
+Subfolders:
+
+
+| ./psalmi     | contains the latin psalms [.tex files] as well as the intonations for the psalm tone [.gabc files]. Also contains the Magnificat. |
+| ./hymni      | contains the .gabc files for the hymns and their versicles and responses                                                          |
+| ./antiphon   | contains the antiphons which are gregorio [.gabc] files                                                                           |
+| ./texti      | contains the various texts, such as the chapter and prayer                                                                        |
+| ./misc       | contains miscellaneous texts and gregorio files, names the beginning and the benedicamus                                          |
+| ./translatio | contains the various translations                                                                                                 |
+
+Note that these folders are used not only for organizational purpose, but also to facilitate the work of translation
+
+* Translating
+** Translations available
+  The 'translatio' folder contains subfolders which are named according to the babel dictionary of that language. Thus English is named 'english', Polish as 'polish'.
+
+  Inside this folder is a mirror of what is at the root folder, with the translation of each part having the same name as its Latin original with the tag -language at the end. Thus the English translation of the antiphons will have the same file name as the source, but with -english appended to them, such as 'an--sit_nomen_domini_in--solesmes-english.tex' will be typeset next to the antiphon with the same file name without -english. Similarly the Polish translations will have the same naming convention, but with '-polish' at the end of them.
+  The only exception are the psalms which have an intonation and a text. These are differentiated by an additional '-intone-' tag in the file name.
+
+** Contributing a translation
+   The easiest way to provide your own translation is to simply copy the 'english' folder and rename it to the target language. Then you can work through each piece, translating it and then saving the translated file with the proper tag in the file name. Note that you should add the tag and the folder name according to how Babel likes to name the language, as this will be used for the rules of hyphenation.
+
+   A great resource for providing a translation is the [[http://divinumofficium.com][Divinum Officium website.]] Much of the text can simply be copied and pasted into the correct file.
+
+  
