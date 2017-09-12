@@ -4,10 +4,14 @@
 [[file:imgs/example-0.png]] [[file:imgs/example-1.png]] [[file:imgs/example-2.png]] [[file:./imgs/example-5.png]]
 ** Downloadable PDFs:
 
-[[file:pdfs/14-pentecosten-english.pdf][14th Sunday after Pentecost, Latin/English]] [[pdfs/14-pentecosten-english-book.pdf][Same in booklet format for printing.]]
-[[pdfs/14-pentecosten-polski.pdf][14th Sunday after Pentecost, Latin/Polish]] [[pdfs/14-pentecosten-polski-book.pdf][Same in booklet format for printing.]]
-[[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]] [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]]
-[[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]] [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]]
+*** [[file:pdfs/14-pentecosten-english.pdf][14th Sunday after Pentecost, Latin/English]]
+  [[pdfs/14-pentecosten-english-book.pdf][Same in booklet format for printing.]]
+*** [[pdfs/14-pentecosten-polski.pdf][14th Sunday after Pentecost, Latin/Polish]]
+  [[pdfs/14-pentecosten-polski-book.pdf][Same in booklet format for printing.]]
+*** [[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]]
+    [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]]
+*** [[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]] 
+   [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]]
 
 * Requirements
 ** LuaLaTeX
