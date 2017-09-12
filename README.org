@@ -69,6 +69,9 @@ Note that these folders are used not only for organizational purposes, but also 
 ** Contributing a translation
    The easiest way to provide your own translation is to simply copy the 'english' folder and rename it to the target language. Then you can work through each piece, translating it and then saving the translated file with the proper tag in the file name. Note that you should add the tag and the folder name according to how Babel likes to name the language, as this will be used for the rules of hyphenation.
 
+   Note that the psalms and their intonations can simply be copied over once one translation is done. The file names are to match with the psalm tone of the Latin version which contain information about inflection. However in the translation there is no distinction so you can simply copy over the Magnificat-8G-english.tex to Magnificat-1d-english.tex. This minor annoyance will be corrected in future versions.
+
    A great resource for providing a translation is the [[http://divinumofficium.com][Divinum Officium website.]] Much of the text can simply be copied and pasted into the correct file.
 
+   Once all the files have been translated, you simply change the value of the \lang macro in the main.tex file to the name of the language.
   
