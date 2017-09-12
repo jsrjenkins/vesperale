@@ -2,6 +2,13 @@
   This project was for the making of small eight-page booklets for Vespers in the Traditional Latin Rite according to the Rubrics of 1962. These booklets are intended for the use of the faithful so that they might sing the public office with devotion and understanding by making available the vernacular with the chant that is sung in Latin. You can see some of the finished and printable booklets in the pdfs folder of this repository:
 
 [[file:imgs/example-0.png]] [[file:imgs/example-1.png]] [[file:imgs/example-2.png]] [[file:./imgs/example-5.png]]
+** Downloadable PDFs:
+
+[[file:pdfs/14-pentecosten-english.pdf][14th Sunday after Pentecost, Latin/English]] [[pdfs/14-pentecosten-english-book.pdf][Same in booklet format for printing.]]
+[[pdfs/14-pentecosten-polski.pdf][14th Sunday after Pentecost, Latin/Polish]] [[pdfs/14-pentecosten-polski-book.pdf][Same in booklet format for printing.]]
+[[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]] [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]]
+[[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]] [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]]
+
 * Requirements
 ** LuaLaTeX
    You will need a latex installation along with the the luatex packages.
@@ -14,12 +21,14 @@
 ** Compiling
   The 'main.tex' collects all the different files into one document. You will need to compile the main.tex file with \write18 enabled, which is done like this in the project directory in linux:
 
-lualatex --shell-escape main
+``lualatex --shell-escape main
 
 ** Making printable booklets
    The printable booklets are made by simply passing the main.pdf to the 'pdfbook' program which can run simply from the commandline on the main.pdf which is produced:
 
-pdfbook main.pdf
+``pdfbook main.pdf
+
+It suggested that once you have made the pdf and the booklet, that they be renamed and placed in the 'pdfs' folder, to keep them for next year and also to see how the project has improved from the previous version. You can see the naming convention in the folder.
 
 * Modifying
   All the source code files are heavily commented. Here is a general idea of the structure:
