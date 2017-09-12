@@ -4,45 +4,48 @@
 [[file:imgs/example-0.png]] [[file:imgs/example-1.png]] [[file:imgs/example-2.png]] [[file:./imgs/example-5.png]]
 ** Downloadable PDFs:
 
-*** [[file:pdfs/14-pentecosten-english.pdf][14th Sunday after Pentecost, Latin/English]]
-  [[pdfs/14-pentecosten-english-book.pdf][Same in booklet format for printing.]]
-*** [[pdfs/14-pentecosten-polski.pdf][14th Sunday after Pentecost, Latin/Polish]]
-  [[pdfs/14-pentecosten-polski-book.pdf][Same in booklet format for printing.]]
-*** [[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]]
-    [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]]
-*** [[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]] 
-   [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]]
+| [[file:pdfs/14-pentecosten-english.pdf][14th Sunday after Pentecost, Latin/English]] | [[pdfs/14-pentecosten-english-book.pdf][Same in booklet format for printing.]] |
+| [[pdfs/14-pentecosten-polski.pdf][14th Sunday after Pentecost, Latin/Polish]]  | [[pdfs/14-pentecosten-polski-book.pdf][Same in booklet format for printing.]] |
+| [[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]] | [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]] |
+| [[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]]  | [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]] |
 
 * Requirements
 ** LuaLaTeX
    You will need a latex installation along with the the luatex packages.
 ** Gregorio 
-  The project requires the installation of Gregorio on your computer, which can be installed according to the directions on this website.
+  The project requires the installation of Gregorio on your computer, which can be installed according to the directions [[http://gregorio-project.github.io/][on the Gregorio Project page.]]
 ** Optional: pdfbook
    This program can make small booklets from the pdf file which can be printed on a duplex printer for folding and stapling.
-   
+** Highly recommended
+   This project was written entirely in [[https://www.gnu.org/software/emacs/][GNU Emacs]], using [[https://www.gnu.org/software/auctex/][AucTeX environment.]] The local variables in each file reflect this. You can use whatever LaTeX editor you are accustomed to, but you may have to change some variables to allow --shell-escape.
+
 * Using this Project
 ** Compiling
   The 'main.tex' collects all the different files into one document. You will need to compile the main.tex file with \write18 enabled, which is done like this in the project directory in linux:
 
-``lualatex --shell-escape main
+#+BEGIN_SRC shell
+lualatex --shell-escape main
+#+END_SRC
 
 ** Making printable booklets
    The printable booklets are made by simply passing the main.pdf to the 'pdfbook' program which can run simply from the commandline on the main.pdf which is produced:
 
-``pdfbook main.pdf
+#+BEGIN_SRC shell   
+pdfbook main.pdf
+#+END_SRC
 
-It suggested that once you have made the pdf and the booklet, that they be renamed and placed in the 'pdfs' folder, to keep them for next year and also to see how the project has improved from the previous version. You can see the naming convention in the folder.
+This will output another file with the tag '-book' added to it. It suggested that once you have made the pdf and the booklet, that they be renamed and placed in the 'pdfs' folder, to keep them for next year and also to see how the project has improved from the previous version. You can see the naming convention in the folder.
 
 * Modifying
   All the source code files are heavily commented. Here is a general idea of the structure:
 
-vesperale.sty: contains all the macro definitions for the layout of the psalms, hymns and text
+| main.tex      | The main file that will be compiled by lualatex                                 |
+| vesperale.sty | contains all the macro definitions for the layout of the psalms, hymns and text |
+| calendar.sty  | contains macros for the calculation of which antiphon is proper for the Sunday  |
 
-calendar.sty: contains macros for the calculation of which antiphon is proper for the Sunday
+The main.tex file contains a section with parts to adjust for the propers. For the moment only two Sundays are supported, the xiv and xv after Pentecost. It is hoped that this public repository will encourage others to help out in completing the others.
 
 Subfolders:
-
 
 | ./psalmi     | contains the latin psalms [.tex files] as well as the intonations for the psalm tone [.gabc files]. Also contains the Magnificat. |
 | ./hymni      | contains the .gabc files for the hymns and their versicles and responses                                                          |
@@ -51,13 +54,16 @@ Subfolders:
 | ./misc       | contains miscellaneous texts and gregorio files, names the beginning and the benedicamus                                          |
 | ./translatio | contains the various translations                                                                                                 |
 
-Note that these folders are used not only for organizational purpose, but also to facilitate the work of translation
+The antiphons are simply named according to the convention used in [[https://gregobase.selapa.net/scores.php][Gregobase.]] This makes it easy to download new antiphons and simply save them in the proper folder.
 
-* Translating
+Note that these folders are used not only for organizational purposes, but also to facilitate the work of translation.
+
+* Translating 
 ** Translations available
   The 'translatio' folder contains subfolders which are named according to the babel dictionary of that language. Thus English is named 'english', Polish as 'polish'.
 
-  Inside this folder is a mirror of what is at the root folder, with the translation of each part having the same name as its Latin original with the tag -language at the end. Thus the English translation of the antiphons will have the same file name as the source, but with -english appended to them, such as 'an--sit_nomen_domini_in--solesmes-english.tex' will be typeset next to the antiphon with the same file name without -english. Similarly the Polish translations will have the same naming convention, but with '-polish' at the end of them.
+  Inside this folder is a mirror of what is at the root folder, with the translation of each part having the same name as its Latin original with a language tag at the end. Thus the English translation of the antiphons will have the same file name as the source, but with -english appended to them, such as 'an--sit_nomen_domini_in--solesmes-english.tex' will be typeset next to the antiphon with the same file name without -english. Similarly the Polish translations will have the same naming convention, but with '-polish' at the end of them.
+
   The only exception are the psalms which have an intonation and a text. These are differentiated by an additional '-intone-' tag in the file name.
 
 ** Contributing a translation
