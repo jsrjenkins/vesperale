@@ -1,0 +1,81 @@
+%%% This is the Main tex document that performs the layout. 
+%%% You will need to compile this using LuaLaTeX with the --shell-escape option
+
+\documentclass[a4paper,twoside,12pt]{article}
+
+%%% Preferences to change are here.
+%%% Note that only the Sundays xiv-xv are supported for the moment
+%%% Others will be added later.
+\newcommand{\sunday}{xv}%% CHANGE THIS 'xv' TO WHICH SUNDAY AFTER PENTECOST
+\newcommand{\lang}{english} %which language translation. 
+%%%% Note that the translation files are in the 'translatio' directory
+%%% For the moment only Polish is available besides english
+
+%%%% some other preferences, not necessary to change.
+\setlength\parindent{0cm} % Paragraph indentation
+\usepackage[top=15mm, bottom=20mm, outer=17mm, inner=17mm]{geometry}% Margins
+\usepackage[autocompile]{gregoriotex}% for layout of gregorian chant
+\gresetlinecolor{gregoriocolor}%% red score lines in chants
+
+%%%% some experimental preferences, not yet very effective:
+%\setlength{\columnsep}{5mm}%% separation between columns
+%\setlength{\columnseprule}{0.2pt}%% column rule
+
+%%% For ordinary Sundays after Pentecost [for the moment, others will be added]
+
+%%% You shouldn't need to make modifications after this point,
+%%% unless you know what you are doing!
+
+\usepackage{fontspec}% necessary for gregorio
+\usepackage{libertine}% the font
+\usepackage{xstring}% for calendar comparisons
+\usepackage{paracol}% for parallel columns
+
+\usepackage[latin,\lang]{babel} % the languages for hyphenation, etc.
+\usepackage{vesperale} %% vespers style sheet has macros for typesetting
+\usepackage{calendar} %% for the selection of propria
+
+\newcommand{\SUNDAY}{\MakeUppercase{\sunday}}
+\begin{document}
+  \begin{center}%
+    \huge{\textbf{Dominica in II Vesperas}}\\
+    \large{\SUNDAY\ post Pentecosten}%%
+  \end{center}
+%%%%
+\section*{Initium}%%
+\versiculus{or--deus_in_adjutorium_simplex--solesmes}%
+%%%%%
+\section*{Psalmi}%% Psalms%
+\subsection*{Psalmus 1}
+\psalmus{an--dixit_dominus_domino--solesmes}{109-7c2}%
+\subsection*{Psalmus 2}
+\psalmus{an--magna_opera_domini--solesmes}{110-3b}%
+\subsection*{Psalmus 3}
+\psalmus{an--qui_timet_dominum--solesmes}{111-4g}%
+\subsection*{Psalmus 4}
+\psalmus{an--sit_nomen_domini_in--solesmes}{112-7c}%
+\subsection*{Psalmus 5}
+\psalmus{an--deus_autem_noster--solesmes}{113-per}%
+\section*{Capitulum}%Chapter
+\text{capitulum-ordinarium}
+\section*{Hymnus}%Hymn
+\hymnus{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}%
+\section*{Canticum}%Magnificat
+\canticum{pentecostes}{\sunday}
+\section*{Oratio}%
+\text{oratio-\sunday}%%
+\section*{Conclusio}%
+\versiculus{or--benedicamus_xi--solesmes}%%% dismissal
+\vskip .5cm%%
+\text{fidelium}%%%
+%%end of document%
+\end{document}%
+%%% Emacs stuff
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: luatex
+%%% TeX-command-extra-options: "-shell-escape"
+%%% End:
+

@@ -1,0 +1,8 @@
+*/auto/*
+*.aux
+*.gaux
+*.log
+*.glog
+*.gtex
+auto/
+/main.pdf

@@ -1,0 +1,28 @@
+%%% This style sheet is for calendar calculating.
+%%% it contains commands to select the proper antiphon and magnificat tone
+
+\newcommand\proprium[2]{%
+  \psalmus{#1}{Magnificat-#2}
+  }
+
+\newcommand{\canticum}[3][\proprium]{% There are two arguments: the season and the sunday
+   \IfEqCase{#2}{%
+     {adventus}{\IfEqCase{#3}{% The other Sundays are still to be filled in
+       {i}{#1{First Sunday of Advent}{4a}} % these are dummy examples
+       {ii}{#1{Second Sunday of Advent}{6F}}
+      }}% end advent cases
+    {pentecostes}{\IfEqCase{#3}{% The ones that are currently available.
+        {xiv}  {#1{an--quaerite_primum--solesmes}{1g}}   %14th after Pentecost
+        {xv}   {#1{an--propheta_magnus--solesmes}{4A}}   %15th after Pentecost
+        {xvi}  {#1{an--cum_vocatus_fueris--solesmes}{7a}}%16th after Pentecost
+        {xvii} {#1{an--quid_vobis_videtur--solesmes}{4E}}%17th after Pentecost
+        {xviii}{#1{an--tulit_ergo--solesmes}{4E}}        %18th after Pentecost
+        {xix}  {#1{an--intravit_autem_rex--solesmes}{3a}}%19th after Pentecost
+        {xx}   {#1{an--cognovit_autem--solesmes}{3a}}    %20th after Pentecost
+        {xxi}  {#1{an--serve_nequam--solesmes}{6}}       %21st after Pentecost
+        {xxii} {#1{an--reddite_ergo--solesmes}{1g}}      %22th after Pentecost
+        {xxiii}{#1{an--at_jesus_conversus--solesmes}{1f}}%23th after Pentecost
+        {xxiv} {#1{an--amen_dico_vobis_quia_non--solesmes}{1f}}%24th after Pentecost
+      }}% end pentecost cases
+  }% end choose instruction
+}%end command

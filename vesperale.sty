@@ -1,0 +1,107 @@
+\newcommand{\rubric}[1]{% make rubrics red
+  {\color{red}#1}
+}
+\newcommand{\transize}[1]{% text size for the translation of chants
+  \footnotesize{#1}
+}
+
+%%%%%%%%%%%%%%%%% 
+% This macro is necessary because babel doesn't expand arguments to language
+\newcommand{\xselectlanguage}[1]{% special command to change translation language
+  \begingroup\edef\x{\endgroup
+    \noexpand\selectlanguage{#1}}\x
+}% use as \xselectlanguage
+
+% this command is for making blank pages for booklets
+\newcommand*\BlankPage{\newpage\null\thispagestyle{empty}\newpage}
+%
+\newcommand{\text}[1]{% parallel latin/translation text
+  \columnratio{0.5}
+  \begin{paracol}{2}
+    \xselectlanguage{latin}% original is always in latin of course
+    \input{texti/#1}
+    \switchcolumn
+    \xselectlanguage{\lang}% translation determined by lang macro defined above
+    \input{translatio/\lang/texti/#1-\lang}% variable \lang determines translation
+  \end{paracol}
+}
+%
+\newcommand{\psalmtext}[1]{% for the psalms and their translations
+  \columnratio{.6}
+  \begin{paracol}{2}
+    \begin{enumerate}% for numbering verses
+      \xselectlanguage{latin}
+      \setcounter{enumi}{1}% verse count at 2
+      \input{psalmi/#1}% The text of the psalm is a tex file
+    \end{enumerate}
+    \switchcolumn
+    \transize{
+      \begin{enumerate}% for numbering verses
+        \xselectlanguage{\lang}
+        \setcounter{enumi}{1}% verse count at 2, change counter if more
+        \input{translatio/\lang/psalmi/#1-\lang}% translation a tex file
+      \end{enumerate}}
+    \end{paracol}
+  }
+%  
+\newcommand{\antiphon}[1]{%for the antiphons in the antiphoni directory
+  \columnratio{0.8}
+  \begin{paracol}{2}
+    \gregorioscore{antiphoni/#1}% Antiphon is a gabc file
+    \switchcolumn
+    \vskip 2mm% a little lower to match with chant bar height
+    \xselectlanguage{\lang}
+    \transize{
+    \input{translatio/\lang/antiphoni/#1-\lang}} % Translation is a tex file
+  \end{paracol}
+}
+%
+\newcommand{\versiculus}[1]{%% for files in the misc directory [initio, conclusio]
+  \columnratio{0.8}
+  \begin{paracol}{2}
+    \gregorioscore{misc/#1}
+    \switchcolumn
+    \vskip 2mm%
+    \xselectlanguage{\lang}
+    \transize{
+    \input{translatio/\lang/misc/#1-\lang}}
+  \end{paracol}
+} 
+%
+\newcommand{\hymnus}[3]{%% for hymns in the hymni directory
+  \columnratio{0.8}
+  \begin{paracol}{2}
+    \gregorioscore{hymni/#1}% hymn itself
+    \gresetinitiallines{0}% no initials for versicle/response
+    \gregorioscore{hymni/#2}% versicle at end of hymn
+    \gregorioscore{hymni/#3}% response of versicle
+    \switchcolumn
+    \vskip 2mm
+    \xselectlanguage{english}
+    \transize{
+    \input{translatio/\lang/hymni/#1-\lang}
+    \input{translatio/\lang/hymni/#2-\lang}
+    \input{translatio/\lang/hymni/#3-\lang}
+    }
+  \end{paracol}
+}
+
+\newcommand{\intonation}[1]{%intonation of the psalms in psalmi directory
+  \columnratio{0.8}
+  \begin{paracol}{2}
+    \gresetinitiallines{0}% no initial for intonation
+    \gregorioscore{psalmi/#1}% intonation is a gabc file
+    \switchcolumn
+    \vskip 2mm
+    \xselectlanguage{\lang}
+    \transize{
+    \input{translatio/\lang/psalmi/#1-intone-\lang}} %translation
+  \end{paracol}
+}
+%
+\newcommand{\psalmus}[2]{% for major offices antiphons for each psalm
+  \antiphon{#1}% the antiphon
+  \intonation{#2} % intonation of the psalm
+  \psalmtext{#2} % the text of the psalm
+  \antiphon{#1} % the repetition of the antiphon after the psalm
+}
