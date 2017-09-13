@@ -73,5 +73,5 @@ Note that these folders are used not only for organizational purposes, but also 
 
    A great resource for providing a translation is the [[http://divinumofficium.com][Divinum Officium website.]] Much of the text can simply be copied and pasted into the correct file.
 
-   Once all the files have been translated, you simply change the value of the \lang macro in the main.tex file to the name of the language.
+   Once all the files have been translated, you simply change the value of the \lang macro in the main.tex file to the name of the language and recompile the project.
   
