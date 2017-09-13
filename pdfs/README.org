@@ -1,0 +1,17 @@
+* Downloads
+
+| Sunday                      | Language | pdf | printable |
+|-----------------------------+----------+-----+-----------|
+| 14th Sunday after Pentecost | English  | [[file:14-pentecosten-english.pdf][PDF]] | [[./14-pentecosten-english-book.pdf][booklet]]   |
+|                             | Polish   | [[file:./14-pentecosten-polski.pdf][PDF]] | [[./14-pentecosten-polski-book.pdf][broszura]]  |
+|-----------------------------+----------+-----+-----------|
+| 15th Sunday after Pentecost | English  | [[file:15-pentecosten-english.pdf][PDF]] | [[./15-pentecosten-english-book.pdf][booklet]]   |
+|                             | Polish   | [[file:./15-pentecosten-polski.pdf][PDF]] | [[./15-pentecosten-polski-book.pdf][broszura]]  |
+|-----------------------------+----------+-----+-----------|
+| 16th Sunday after Pentecost | English  | [[file:16-pentecosten-english.pdf][PDF]] | [[./16-pentecosten-english-book.pdf][booklet]]   |
+|                             | Polish   | [[file:./16-pentecosten-polski.pdf][PDF]] | [[./16-pentecosten-polski-book.pdf][broszura]]  |
+|-----------------------------+----------+-----+-----------|
+| 17th Sunday after Pentecost | English  | [[file:17-pentecosten-english.pdf][PDF]] | [[./17-pentecosten-english-book.pdf][booklet]]   |
+|                             | Polish   | [[file:./17-pentecosten-polski.pdf][PDF]] | [[./17-pentecosten-polski-book.pdf][broszura]]  |
+|-----------------------------+----------+-----+-----------|
+
