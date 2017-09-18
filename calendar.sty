@@ -1,11 +1,74 @@
 %%% This style sheet is for calendar calculating.
 %%% it contains commands to select the proper antiphon and magnificat tone
 
-\newcommand\proprium[2]{%
-  \psalmus{#1}{Magnificat-#2}
-  }
+%% Layout the psalms, choosing them according to the time.
+\newcommand\initium[1]{
+  \IfEqCase{\tempus}{
+  {pentecostes}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+  {defunctorum}{\rubric{dicitur secreto} Pater noster \rubric{et} Ave, Maria \rubric{secus absolute incipitur a sequenti} }%% no initium for office of the dead %
+}% end cases
+}
 
-\newcommand{\canticum}[3][\proprium]{% There are two arguments: the season and the sunday
+\newcommand\psalterium[1]{
+  \subsection*{Psalmus #1}
+  \antiphoni{\tempus}{#1}}
+
+\newcommand\antiphoni[3][\psalmus]{ % chooses which antiphons for the psalms
+  \IfEqCase{#2}{%
+    {adventus}{\IfEqCase{#3}{% not yet implemented
+        {1}{}
+      }}% end advent cases
+    {pentecostes}{\IfEqCase{#3}{
+        {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
+        {2}{#1{an--magna_opera_domini--solesmes}{110-3b}}   % 2nd psalm
+        {3}{#1{an--qui_timet_dominum--solesmes}{111-4g}}    % 3rd psalm
+        {4}{#1{an--sit_nomen_domini_in--solesmes}{112-7c}}  % 4th psalm
+        {5}{#1{an--deus_autem_noster--solesmes}{113-per}}   % 5th psalm
+      }}%% end pentecost cases
+    {defunctorum}{\IfEqCase{#3}{%% not yet implemented
+        {1}{#1{an--placebo_domino--solesmes}{114-req-3b}} % 1st psalm
+        {2}{#1{an--heu_me_domine--solesmes}{119-req-2D}}  % 2nd psalm
+        {3}{#1{an--dominus_custodit_te--solesmes}{120-req-8G}} % 3rd
+        {4}{#1{an--si_iniquitates--solesmes}{129-req-8G}} % 4th psalm
+        {5}{#1{an--opera_manuum_tuarum--solesmes}{137-req-2D}} % 5th
+      }} % end defunctorum cases
+  } % end choose instruction
+} % end command
+
+\newcommand\capitulum[2]{% argument is the Sunday and the Time
+  \IfEqCase{#2}{%
+    {adventus}{\IfEqCase{#1}{%not yet implemented
+        {i}{}
+      }}%% End advent cases
+    {pentecostes}{\section*{Capitulum} \text{capitulum-#2}
+    }%% end Pentecost, same for all Sundays after pentecost
+    {defunctorum}{\input{texti/capitulum-#2}} % verse and response for office of the dead.
+  }
+}
+ 
+\newcommand\hymni[3]{
+  \section*{Hymnus}% section
+  \hymnus{#1}{#2}{#3}
+}
+\newcommand\hymnarium[2][\hymni]{% Chooses hymn according to tempus
+  \IfEqCase{#2}{%
+    {adventus}{
+    }%% end advent case
+    {pentecostes}{%
+      {#1{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}}%
+    }%% end pentecost case
+    {defunctorum}{%
+      {} %% office of the dead has no hymn
+    }%% end defunctorum case
+  }% end choices
+}% end command
+
+
+\newcommand\magnificat[2]{%
+  \psalmus{#1}{Magnificat-#2}
+}
+
+\newcommand{\canticum}[3][\magnificat]{% There are two arguments: the season and the sunday
    \IfEqCase{#2}{%
      {adventus}{\IfEqCase{#3}{% The other Sundays are still to be filled in
        {i}{#1{First Sunday of Advent}{4a}} % these are dummy examples
@@ -24,5 +87,16 @@
         {xxiii}{#1{an--at_jesus_conversus--solesmes}{1f}}%23th after Pentecost
         {xxiv} {#1{an--amen_dico_vobis_quia_non--solesmes}{1f}}%24th after Pentecost
       }}% end pentecost cases
+    {defunctorum}{\IfEqCase{#3}{% office of the dead
+        {i}    {#1{an--omne_quod_dat_mihi--solesmes}{req-7c}} % note has requiem aeternam
+      }} % end defunctorum
   }% end choose instruction
 }%end command
+
+\newcommand\conclusio[1]{%
+  \IfEqCase{#1}{%
+    {pentecostes}{\versiculus{or--benedicamus_xi--solesmes} \vskip .5cm \text{fidelium}}
+    {defunctorum}{\input{texti/conclusio-#1}}
+  }
+}
+

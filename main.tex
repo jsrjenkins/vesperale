@@ -6,8 +6,9 @@
 %%% Preferences to change are here.
 %%% Note that only the Sundays xiv-xv are supported for the moment
 %%% Others will be added later.
-\newcommand{\sunday}{xvii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
-\newcommand{\lang}{polish} %which language translation. %
+\newcommand{\tempus}{defunctorum}%% what season or proper
+\newcommand{\numerus}{i}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
+\newcommand{\lang}{english} %which language translation. %
 %%%% Note that the translation files are in the 'translatio' directory
 %%% For the moment only polish is available besides english
 
@@ -35,39 +36,38 @@
 \usepackage{vesperale} %% vespers style sheet has macros for typesetting
 \usepackage{calendar} %% for the selection of propria
 
-\newcommand{\SUNDAY}{\MakeUppercase{\sunday}}
+\newcommand{\SUNDAY}{\MakeUppercase{\numerus}}
 \begin{document}
-  \begin{center}%
-    \huge{\textbf{Dominica in II Vesperas}}\\
-    \large{\SUNDAY\ post Pentecosten}%%
+  \begin{center}%%% TODO: Make this title programmatically. For now, manual edit.
+    \huge{\textbf{Officium Defunctorum}}\\
+    \large{ad Vesperas}%%
   \end{center}
-%%%%
-\section*{Initium}%%
-\versiculus{or--deus_in_adjutorium_simplex--solesmes}%
+%%%
+%%% Initium is calculated according to the office
+\initium %% this is defined in the calendar file
 %%%%%
+
 \section*{Psalmi}%% Psalms%
-\subsection*{Psalmus 1}
-\psalmus{an--dixit_dominus_domino--solesmes}{109-7c2}%
-\subsection*{Psalmus 2}
-\psalmus{an--magna_opera_domini--solesmes}{110-3b}%
-\subsection*{Psalmus 3}
-\psalmus{an--qui_timet_dominum--solesmes}{111-4g}%
-\subsection*{Psalmus 4}
-\psalmus{an--sit_nomen_domini_in--solesmes}{112-7c}%
-\subsection*{Psalmus 5}
-\psalmus{an--deus_autem_noster--solesmes}{113-per}%
-\section*{Capitulum}%Chapter
-\text{capitulum-ordinarium}
-\section*{Hymnus}%Hymn
-\hymnus{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}%
+
+\psalterium{1}% macro that places the proper antiphon and psalm according to the \tempus 
+\psalterium{2}% see the calendar.sty file
+\psalterium{3}
+\psalterium{4}
+\psalterium{5}
+
+\capitulum{\numerus}{\tempus}% Chapter, see calendar.sty
+
+%% hymnarium macro adds section, some offices have no hymn
+\hymnarium{\tempus}% hymn according to time
+
 \section*{Canticum}%Magnificat
-\canticum{pentecostes}{\sunday}
+\canticum{\tempus}{\numerus}
+
 \section*{Oratio}%
-\text{oratio-\sunday}%%
+\text{oratio-\numerus-\tempus}%%
+
 \section*{Conclusio}%
-\versiculus{or--benedicamus_xi--solesmes}%%% dismissal
-\vskip .5cm%%
-\text{fidelium}%%%
+\conclusio{\tempus}
 %%end of document%
 \end{document}%
 %%% Emacs stuff %%%
