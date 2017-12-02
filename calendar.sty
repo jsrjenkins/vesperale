@@ -4,10 +4,11 @@
 %% Layout the psalms, choosing them according to the time.
 \newcommand\initium[1]{
   \IfEqCase{\tempus}{
+  {adventus}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
   {pentecostes}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
   {defunctorum}{\rubric{dicitur secreto} Pater noster \rubric{et} Ave, Maria \rubric{secus absolute incipitur a sequenti} }%% no initium for office of the dead %
 }% end cases
-}
+}% End initium
 
 \newcommand\psalterium[1]{
   \subsection*{Psalmus #1}
@@ -15,8 +16,12 @@
 
 \newcommand\antiphoni[3][\psalmus]{ % chooses which antiphons for the psalms
   \IfEqCase{#2}{%
-    {adventus}{\IfEqCase{#3}{% not yet implemented
-        {1}{}
+    {adventus}{\IfEqCase{#3}{% not yet implemented, only 1st sunday
+        {1}{#1{an--in_illa_die--solesmes}{109-8G}}
+        {2}{#1{an--jucundare_filia--solesmes}{110-8Gstar}}
+        {3}{#1{an--ecce_dominus_veniet--solesmes}{111-5a}}
+        {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
+        {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
       }}% end advent cases
     {pentecostes}{\IfEqCase{#3}{
         {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
@@ -37,8 +42,8 @@
 
 \newcommand\capitulum[2]{% argument is the Sunday and the Time
   \IfEqCase{#2}{%
-    {adventus}{\IfEqCase{#1}{%not yet implemented
-        {i}{}
+    {adventus}{\IfEqCase{#1}{%not yet implemented, only 1st Advent
+        {i}{\section*{Capitulum} \text{capitulum-adventus-#1}
       }}%% End advent cases
     {pentecostes}{\section*{Capitulum} \text{capitulum-#2}
     }%% end Pentecost, same for all Sundays after pentecost
@@ -53,6 +58,7 @@
 \newcommand\hymnarium[2][\hymni]{% Chooses hymn according to tempus
   \IfEqCase{#2}{%
     {adventus}{
+      {#1{hy--creator_alme_siderum--solesmes}{rorate}{aperiatur}}%
     }%% end advent case
     {pentecostes}{%
       {#1{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}}%
@@ -71,8 +77,8 @@
 \newcommand{\canticum}[3][\magnificat]{% There are two arguments: the season and the sunday
    \IfEqCase{#2}{%
      {adventus}{\IfEqCase{#3}{% The other Sundays are still to be filled in
-       {i}{#1{First Sunday of Advent}{4a}} % these are dummy examples
-       {ii}{#1{Second Sunday of Advent}{6F}}
+       {i}     {#1{an--ne_timeas--solesmes}{8G}} % only 1st advent implemented
+       {ii}    {#1{Second Sunday of Advent}{6F}}
       }}% end advent cases
     {pentecostes}{\IfEqCase{#3}{% The ones that are currently available.
         {xiv}  {#1{an--quaerite_primum--solesmes}{1g}}   %14th after Pentecost
@@ -95,6 +101,7 @@
 
 \newcommand\conclusio[1]{%
   \IfEqCase{#1}{%
+    {adventus}{\versiculus{or--benedicamus_adventus--solesmes} \vskip .5cm \text{fidelium}}
     {pentecostes}{\versiculus{or--benedicamus_xi--solesmes} \vskip .5cm \text{fidelium}}
     {defunctorum}{\input{texti/conclusio-#1}}
   }
