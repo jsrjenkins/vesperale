@@ -12,25 +12,41 @@
 
 \newcommand\psalterium[1]{
   \subsection*{Psalmus #1}
-  \antiphoni{\tempus}{#1}}
+  \antiphoni{\tempus}{\numerus}{#1}}
 
-\newcommand\antiphoni[3][\psalmus]{ % chooses which antiphons for the psalms
-  \IfEqCase{#2}{%
-    {adventus}{\IfEqCase{#3}{% not yet implemented, only 1st sunday
-        {1}{#1{an--in_illa_die--solesmes}{109-8G}}
-        {2}{#1{an--jucundare_filia--solesmes}{110-8Gstar}}
-        {3}{#1{an--ecce_dominus_veniet--solesmes}{111-5a}}
-        {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
-        {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
+\newcommand\antiphoni[4][\psalmus]{ % chooses which antiphons for the psalms
+  \IfEqCase{#2}{% second argument is the \tempus #4 is which psalm
+    {adventus}{\IfEqCase{#3}{ % 3rd argument is the \numerus
+       {i}{\IfEqCase{#4}{ % 1st sunday antiphons
+         {1}{#1{an--in_illa_die--solesmes}{109-8G}}
+         {2}{#1{an--jucundare_filia--solesmes}{110-8Gstar}}
+         {3}{#1{an--ecce_dominus_veniet--solesmes}{111-5a}}
+         {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
+         {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
+         }}% End 1st Sunday antiphons
+       {ii}{\IfEqCase{#4}{ %% these are not correct
+         {1}{#1{an--in_illa_die--solesmes}{109-8G}}
+         {2}{#1{an--jucundare_filia--solesmes}{110-8Gstar}}
+         {3}{#1{an--ecce_dominus_veniet--solesmes}{111-5a}}
+         {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
+         {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
+         }}% End 2nd Sunday
+       {iii}{\IfEqCase{#4}{ % third sunday of advent
+         {1}{#1{an--veniet_dominus--solesmes}{109-1a}}
+         {2}{#1{an--jerusalem_gaude--solesmes}{110-7b}}
+         {3}{#1{an--dabo_in_sion--solesmes}{111-8G}}
+         {4}{#1{an--montes_et_omnes_colles--solesmes}{112-5a}}
+         {5}{#1{an--juste_et_pie--solesmes}{113-2D}}
+         }}% End 3rd Sunday
       }}% end advent cases
-    {pentecostes}{\IfEqCase{#3}{
+    {pentecostes}{\IfEqCase{#4}{
         {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
         {2}{#1{an--magna_opera_domini--solesmes}{110-3b}}   % 2nd psalm
         {3}{#1{an--qui_timet_dominum--solesmes}{111-4g}}    % 3rd psalm
         {4}{#1{an--sit_nomen_domini_in--solesmes}{112-7c}}  % 4th psalm
         {5}{#1{an--deus_autem_noster--solesmes}{113-per}}   % 5th psalm
       }}%% end pentecost cases
-    {defunctorum}{\IfEqCase{#3}{%% not yet implemented
+    {defunctorum}{\IfEqCase{#4}{%% not yet implemented
         {1}{#1{an--placebo_domino--solesmes}{114-req-3b}} % 1st psalm
         {2}{#1{an--heu_me_domine--solesmes}{119-req-2D}}  % 2nd psalm
         {3}{#1{an--dominus_custodit_te--solesmes}{120-req-8G}} % 3rd
@@ -44,6 +60,7 @@
   \IfEqCase{#2}{%
     {adventus}{\IfEqCase{#1}{%not yet implemented, only 1st Advent
         {i}{\section*{Capitulum} \text{capitulum-adventus-#1}}
+        {iii}{\section*{Capitulum} \text{capitulum-adventus-#1}}
       }}%% End advent cases
     {pentecostes}{\section*{Capitulum} \text{capitulum-#2}
     }%% end Pentecost, same for all Sundays after pentecost
@@ -79,6 +96,7 @@
      {adventus}{\IfEqCase{#3}{% The other Sundays are still to be filled in
        {i}     {#1{an--ne_timeas--solesmes}{8G}} % only 1st advent implemented
        {ii}    {#1{Second Sunday of Advent}{6F}}
+       {iii}   {#1{an--beata_es_maria--solesmes}{8G}}
       }}% end advent cases
     {pentecostes}{\IfEqCase{#3}{% The ones that are currently available.
         {xiv}  {#1{an--quaerite_primum--solesmes}{1g}}   %14th after Pentecost
