@@ -9,6 +9,8 @@
 | [[pdfs/15-pentecosten-english.pdf][15th Sunday after Pentecost, Latin/English]] | [[pdfs/15-pentecosten-english-book.pdf][Same in booklet format for printing.]] |
 | [[pdfs/15-pentecosten-polish.pdf][15th Sunday after Pentecost, Latin/Polish]]  | [[pdfs/15-pentecosten-polish-book.pdf][Same in booklet format for printing.]] |
 
+More downloads are available [[pdfs/][here.]]
+
 * Requirements
 ** LuaLaTeX
    You will need a latex installation along with the the luatex packages.

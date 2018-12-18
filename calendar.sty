@@ -24,12 +24,12 @@
          {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
          {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
          }}% End 1st Sunday antiphons
-       {ii}{\IfEqCase{#4}{ %% these are not correct
-         {1}{#1{an--in_illa_die--solesmes}{109-8G}}
-         {2}{#1{an--jucundare_filia--solesmes}{110-8Gstar}}
-         {3}{#1{an--ecce_dominus_veniet--solesmes}{111-5a}}
-         {4}{#1{an--omnes_sitientes--solesmes}{112-7c}}
-         {5}{#1{an--ecce_veniet_propheta--solesmes}{113-4Astar}}
+       {ii}{\IfEqCase{#4}{ % second sunday of advent
+         {1}{#1{an--ecce_in_nubibus--solesmes}{109-1g}}
+         {2}{#1{an--urbs_fortitudinis--solesmes}{110-7d}}
+         {3}{#1{an--ecce_apparebit--solesmes}{111-7a}}
+         {4}{#1{an--montes_et_colles--solesmes}{112-1f}} 
+         {5}{#1{an--ecce_dominus_noster--solesmes}{113-3a}}
          }}% End 2nd Sunday
        {iii}{\IfEqCase{#4}{ % third sunday of advent
          {1}{#1{an--veniet_dominus--solesmes}{109-1a}}
@@ -38,6 +38,13 @@
          {4}{#1{an--montes_et_omnes_colles--solesmes}{112-5a}}
          {5}{#1{an--juste_et_pie--solesmes}{113-2D}}
          }}% End 3rd Sunday
+       {iv}{\IfEqCase{#4}{ % fourth sunday of advent
+         {1}{#1{an--canite_tuba--solesmes}{109-1g}}  % 1st psalm
+         {2}{#1{an--ecce_veniet_desideratus--solesmes}{110-1f}} % 2nd
+         {3}{#1{an--erunt_prava--solesmes}{111-1g}}  % 3rd 
+         {4}{#1{an--dominus_veniet--solesmes}{112-1f}} % 4th
+         {5}{#1{an--omnipotens_sermo--solesmes}{113-2D}} % 5th
+         }}% End 4th Sunday
       }}% end advent cases
     {pentecostes}{\IfEqCase{#4}{
         {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
@@ -58,9 +65,11 @@
 
 \newcommand\capitulum[2]{% argument is the Sunday and the Time
   \IfEqCase{#2}{%
-    {adventus}{\IfEqCase{#1}{%not yet implemented, only 1st Advent
+    {adventus}{\IfEqCase{#1}{% simplify this mess %% TODO %%
         {i}{\section*{Capitulum} \text{capitulum-adventus-#1}}
+        {ii}{\section*{Capitulum} \text{capitulum-adventus-#1}}
         {iii}{\section*{Capitulum} \text{capitulum-adventus-#1}}
+        {iv}{\section*{Capitulum} \text{capitulum-adventus-#1}}
       }}%% End advent cases
     {pentecostes}{\section*{Capitulum} \text{capitulum-#2}
     }%% end Pentecost, same for all Sundays after pentecost
@@ -95,8 +104,10 @@
    \IfEqCase{#2}{%
      {adventus}{\IfEqCase{#3}{% The other Sundays are still to be filled in
        {i}     {#1{an--ne_timeas--solesmes}{8G}} % only 1st advent implemented
-       {ii}    {#1{Second Sunday of Advent}{6F}}
+       {ii}    {#1{an--tu_es_qui_venturus_es--solesmes}{8G}}
        {iii}   {#1{an--beata_es_maria--solesmes}{8G}}
+       {iv}    {#1{an--o_emmanuel--solesmes}{2D}} % note that this is an "O" Antiphon
+                                                  % needs to be changed each year. %% TODO %%
       }}% end advent cases
     {pentecostes}{\IfEqCase{#3}{% The ones that are currently available.
         {xiv}  {#1{an--quaerite_primum--solesmes}{1g}}   %14th after Pentecost

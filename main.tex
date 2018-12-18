@@ -1,16 +1,16 @@
 %%% This is the Main tex document that performs the layout. 
 %%% You will need to compile this using LuaLaTeX with the --shell-escape option
 
-\documentclass[a4paper,twoside,11pt]{article}%%
+\documentclass[a4paper,twoside,10pt]{article}%% change size of font to fit in 8 pages
 
 %%% Preferences to change are here.
 %%% Note that only the Sundays xiv-xv are supported for the moment
 %%% Others will be added later.
 \newcommand{\tempus}{adventus}%% what season or proper
-\newcommand{\numerus}{iii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
+\newcommand{\numerus}{iv}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
 \newcommand{\lang}{english} %which language translation. %
 %%%% Note that the translation files are in the 'translatio' directory
-%%% For the moment only polish is available besides english
+%%% For the moment only polish is available besides english %
 
 %%%% some other preferences, not necessary to change.
 \setlength\parindent{0cm} % Paragraph indentation
@@ -28,7 +28,7 @@
 %%% unless you know what you are doing!
 
 \usepackage{fontspec}% necessary for gregorio
-\usepackage{libertine}% the font
+\usepackage{libertine}% the font %
 \usepackage{xstring}% for calendar comparisons
 \usepackage{paracol}% for parallel columns
 

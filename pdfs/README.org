@@ -1,5 +1,23 @@
 * Downloads
+** Vespers of the Dead
+|---------------------+---------+-----+---------|
+| Vespers of the Dead | English | [[file:defunctorum-english.pdf][PDF]] | [[./defunctorum-english-book.pdf][booklet]] |
+|---------------------+---------+-----+---------|
 
+** Advent
+| Sunday               | Language | pdf | printable |
+|----------------------+----------+-----+-----------|
+| 1st Sunday of Advent | English  | [[file:01-adventus-english.pdf][PDF]] | [[./01-adventus-english-book.pdf][booklet]]   |
+|----------------------+----------+-----+-----------|
+| 2nd Sunday of Advent | English  | [[file:02-adventus-english.pdf][PDF]] | [[./02-adventus-english-book.pdf][booklet]]   |
+|----------------------+----------+-----+-----------|
+| 3rd Sunday of Advent | English  | [[file:03-adventus-english.pdf][PDF]] | [[./03-adventus-english-book.pdf][booklet]]   |
+|----------------------+----------+-----+-----------|
+| 4th Sunday of Advent | English  | [[file:04-adventus-english.pdf][PDF]] | [[./04-adventus-english-book.pdf][booklet]]   |
+|----------------------+----------+-----+-----------|
+
+   
+** Time after Pentecost
 | Sunday                      | Language | pdf | printable |
 |-----------------------------+----------+-----+-----------|
 | 14th Sunday after Pentecost | English  | [[file:14-pentecosten-english.pdf][PDF]] | [[./14-pentecosten-english-book.pdf][booklet]]   |
@@ -14,4 +32,11 @@
 | 17th Sunday after Pentecost | English  | [[file:17-pentecosten-english.pdf][PDF]] | [[./17-pentecosten-english-book.pdf][booklet]]   |
 |                             | Polish   | [[file:./17-pentecosten-polski.pdf][PDF]] | [[./17-pentecosten-polski-book.pdf][broszura]]  |
 |-----------------------------+----------+-----+-----------|
+| 18th Sunday after Pentecost | English  |     |           |
+|                             |          |     |           |
+|-----------------------------+----------+-----+-----------|
+| 19th Sunday after Pentecost | English  | [[./19-pentecosten-english.pdf][PDF]] | [[./19-pentecosten-english-book.pdf][booklet]]   |
+|                             |          |     |           |
+|-----------------------------+----------+-----+-----------|
+
 
