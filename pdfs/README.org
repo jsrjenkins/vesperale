@@ -1,8 +1,9 @@
 * Downloads
 ** Vespers of the Dead
-|---------------------+---------+-----+---------|
-| Vespers of the Dead | English | [[file:defunctorum-english.pdf][PDF]] | [[./defunctorum-english-book.pdf][booklet]] |
-|---------------------+---------+-----+---------|
+| Office              | Language | pdf | printable |
+|---------------------+----------+-----+-----------|
+| Vespers of the Dead | English  | [[file:defunctorum-english.pdf][PDF]] | [[./defunctorum-english-book.pdf][booklet]]   |
+|---------------------+----------+-----+-----------|
 
 ** Advent
 | Sunday               | Language | pdf | printable |
@@ -15,7 +16,6 @@
 |----------------------+----------+-----+-----------|
 | 4th Sunday of Advent | English  | [[file:04-adventus-english.pdf][PDF]] | [[./04-adventus-english-book.pdf][booklet]]   |
 |----------------------+----------+-----+-----------|
-
    
 ** Time after Pentecost
 | Sunday                      | Language | pdf | printable |
