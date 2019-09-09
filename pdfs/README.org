@@ -21,6 +21,7 @@
 | Sunday                      | Language | pdf | printable |
 |-----------------------------+----------+-----+-----------|
 | 13th Sunday after Pentecost | English  | [[file:13-pentecosten-english.pdf][PDF]] | [[file:13-pentecosten-english-book.pdf][booklet]]   |
+|                             | Polish   | [[13-pentecosten-polish.pdf][PDF]] | [[13-pentecosten-polish-book.pdf][broszura]]  |
 |-----------------------------+----------+-----+-----------|
 | 14th Sunday after Pentecost | English  | [[file:14-pentecosten-english.pdf][PDF]] | [[./14-pentecosten-english-book.pdf][booklet]]   |
 |                             | Polish   | [[file:./14-pentecosten-polski.pdf][PDF]] | [[./14-pentecosten-polski-book.pdf][broszura]]  |
