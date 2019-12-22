@@ -1,14 +1,14 @@
 %%% This is the Main tex document that performs the layout. 
 %%% You will need to compile this using LuaLaTeX with the --shell-escape option
 
-\documentclass[a4paper,twoside,10pt]{article}%% change size of font to fit in 8 pages
+\documentclass[a4paper,twoside,11pt]{article}%% change size of font to fit in 8 pages
 
 %%% Preferences to change are here.
 %%% Note that only the Sundays xiv-xv are supported for the moment
 %%% Others will be added later.
-\newcommand{\tempus}{adventus}%% what season or proper
-\newcommand{\numerus}{iv}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
-\newcommand{\lang}{english} %which language translation. %
+\newcommand{\tempus}{pentecostes}%{adventus}%% what season or proper
+\newcommand{\numerus}{xiii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
+\newcommand{\lang}{polish}%{english} %which language translation. %
 %%%% Note that the translation files are in the 'translatio' directory
 %%% For the moment only polish is available besides english %
 
@@ -40,7 +40,7 @@
 \begin{document}
   \begin{center}%%% TODO: Make this title programmatically. For now, manual edit.
     \huge{\textbf{Dominica ad Vesperas}}\\
-    \large{\SUNDAY\ Adventus}%%
+    \large{\SUNDAY\ Pentecostes}%%
   \end{center}
 %%%
 %%% Initium is calculated according to the office
