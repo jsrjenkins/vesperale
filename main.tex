@@ -6,15 +6,15 @@
 %%% Preferences to change are here.
 %%% Note that only the Sundays xiv-xv are supported for the moment
 %%% Others will be added later.
-\newcommand{\tempus}{quadragesima}%{pentecostes}%{adventus}%% what season or proper
-\newcommand{\numerus}{iv}%{xiii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
+\newcommand{\tempus}{pentecostes}%{quadragesima}%{pentecostes}%{adventus}%% what season or proper
+\newcommand{\numerus}{viii}%{xiii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
 \newcommand{\lang}{english}%{polish} %which language translation. %
 %%%% Note that the translation files are in the 'translatio' directory
 %%% For the moment only polish is available besides english %
 
 %%%% some other preferences, not necessary to change.
 \setlength\parindent{0cm} % Paragraph indentation.
-\usepackage[top=15mm, bottom=20mm, outer=15mm, inner=15mm]{geometry}% Margins
+\usepackage[top=15mm, bottom=10mm, outer=15mm, inner=15mm]{geometry}% Margins
 \usepackage[autocompile]{gregoriotex}% for layout of gregorian chant
 \gresetlinecolor{gregoriocolor}%% red score lines in chants
 
@@ -37,7 +37,7 @@
 \usepackage{calendar} %% for the selection of propria
 
 \newcommand{\SUNDAY}{\MakeUppercase{\numerus}}
-\newcommand{\TIME}{\MakeUppercase{\tempus}}}
+\newcommand{\TIME}{\MakeUppercase{\tempus}}
 
 \begin{document}
   \begin{center}%%% TODO: Make this title programmatically. For now, manual edit.
@@ -70,7 +70,6 @@
 
 \section*{Conclusio}%
 \conclusio{\tempus}
-%%end of document%
 \end{document}%
 %%% Emacs stuff %%%
 
