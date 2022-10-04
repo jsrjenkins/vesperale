@@ -20,6 +20,8 @@
 ** Time after Pentecost
 | Sunday                      | Language | pdf | printable |
 |-----------------------------+----------+-----+-----------|
+| 8th Sunday after Pentecost  | English  | [[file:08-pentecosten-english.pdf][PDF]] | [[file:08-pentecosten-english-book.pdf][booklet]]   |
+|-----------------------------+----------+-----+-----------|
 | 13th Sunday after Pentecost | English  | [[file:13-pentecosten-english.pdf][PDF]] | [[file:13-pentecosten-english-book.pdf][booklet]]   |
 |                             | Polish   | [[13-pentecosten-polish.pdf][PDF]] | [[13-pentecosten-polish-book.pdf][broszura]]  |
 |-----------------------------+----------+-----+-----------|
@@ -35,11 +37,15 @@
 | 17th Sunday after Pentecost | English  | [[file:17-pentecosten-english.pdf][PDF]] | [[./17-pentecosten-english-book.pdf][booklet]]   |
 |                             | Polish   | [[file:./17-pentecosten-polski.pdf][PDF]] | [[./17-pentecosten-polski-book.pdf][broszura]]  |
 |-----------------------------+----------+-----+-----------|
-| 18th Sunday after Pentecost | English  |     |           |
+| 18th Sunday after Pentecost | English  | [[file:18-pentecosten-english.pdf][PDF]] | [[file:18-pentecosten-english-book.pdf][booklet]]   |
 |                             |          |     |           |
 |-----------------------------+----------+-----+-----------|
 | 19th Sunday after Pentecost | English  | [[./19-pentecosten-english.pdf][PDF]] | [[./19-pentecosten-english-book.pdf][booklet]]   |
 |                             |          |     |           |
 |-----------------------------+----------+-----+-----------|
+| 20th Sunday after Pentecost | English  | [[file:20-pentecosten-english.pdf][PDF]] | [[file:20-pentecosten-english-book.pdf][booklet]]   |
+|                             |          |     |           |
+|-----------------------------+----------+-----+-----------|
+
 
 
