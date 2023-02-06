@@ -4,10 +4,12 @@
 %% Layout the psalms, choosing them according to the time.
 \newcommand\initium[1]{
   \IfEqCase{\tempus}{
-    {adventus}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
-    {quadragesima}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
-    {pentecostes}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
-    {defunctorum}{\rubric{dicitur secreto} Pater noster \rubric{et} Ave, Maria \rubric{secus absolute incipitur a sequenti} }%% no initium for office of the dead %
+   {adventus}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+   {epiphania}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+   {septuagesima}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+   {quadragesima}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+   {pentecostes}{\section*{Initium}\versiculus{or--deus_in_adjutorium_simplex--solesmes}}
+   {defunctorum}{\rubric{dicitur secreto} Pater noster \rubric{et} Ave, Maria \rubric{secus absolute incipitur a sequenti} }%% no initium for office of the dead %
 }% end cases
 }% End initium
 
@@ -46,7 +48,21 @@
          {4}{#1{an--dominus_veniet--solesmes}{112-1f}} % 4th
          {5}{#1{an--omnipotens_sermo--solesmes}{113-2D}} % 5th
          }}% End 4th Sunday
-      }}% end advent cases
+     }}% end advent cases
+    {epiphania}{\IfEqCase{#4}{
+        {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
+        {2}{#1{an--magna_opera_domini--solesmes}{110-3b}}   % 2nd psalm
+        {3}{#1{an--qui_timet_dominum--solesmes}{111-4g}}    % 3rd psalm
+        {4}{#1{an--sit_nomen_domini_in--solesmes}{112-7c}}  % 4th psalm
+        {5}{#1{an--deus_autem_noster--solesmes}{113-per}}   % 5th psalm
+      }}%% end Epiphany cases
+    {septuagesima}{\IfEqCase{#4}{
+        {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
+        {2}{#1{an--magna_opera_domini--solesmes}{110-3b}}   % 2nd psalm
+        {3}{#1{an--qui_timet_dominum--solesmes}{111-4g}}    % 3rd psalm
+        {4}{#1{an--sit_nomen_domini_in--solesmes}{112-7c}}  % 4th psalm
+        {5}{#1{an--deus_autem_noster--solesmes}{113-per}}   % 5th psalm
+      }}%% end Septuagesima cases
     {quadragesima}{\IfEqCase{#4}{
         {1}{#1{an--dixit_dominus_domino--solesmes}{109-7c2}}% 1st psalm
         {2}{#1{an--magna_opera_domini--solesmes}{110-3b}}   % 2nd psalm
@@ -79,6 +95,13 @@
         {iii}{\section*{Capitulum} \text{capitulum-adventus-#1}}
         {iv}{\section*{Capitulum} \text{capitulum-adventus-#1}}
       }}%% End advent cases
+    {epiphania}{\section*{Capitulum} \text{capitulum-#2}
+      }%% End Epiphany cases, same for all Sundays
+    {septuagesima}{\IfEqCase{#1}{% simplify this mess %% TODO %%
+        {i}{\section*{Capitulum} \text{capitulum-septuagesima-#1}}
+        {ii}{\section*{Capitulum} \text{capitulum-septuagesima-#1}}
+        {iii}{\section*{Capitulum} \text{capitulum-septuagesima-#1}}
+      }}%% End Septuagesima Cases cases
     {quadragesima}{\IfEqCase{#1}{% simplify this mess %% TODO %%
         {i}{\section*{Capitulum} \text{capitulum-quadragesima-#1}}
         {ii}{\section*{Capitulum} \text{capitulum-quadragesima-#1}}
@@ -100,6 +123,12 @@
     {adventus}{
       {#1{hy--creator_alme_siderum--solesmes}{rorate}{aperiatur}}%
     }%% end advent case
+    {epiphania}{%
+      {#1{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}}%
+    }%% end epiphany case
+    {septuagesima}{%
+      {#1{hy--lucis_creator_optime--solesmes}{dirigatur}{sicut}}%
+    }%% end epiphany case
     {quadragesima}{%
       {#1{hy--audi_benigne_conditor--solesmes}{angelis}{utcustodiant}}%
       }%% end Lent cases
@@ -126,6 +155,19 @@
        {iv}    %{#1{an--o_emmanuel--solesmes}{2D}}    % note that this is an "O" Antiphon
                {#1{an--o_radix_jesse--solesmes}{2D}} % needs to be changed each year. %% TODO %%
       }}% end advent cases
+    {epiphania}{\IfEqCase{#3}{% The ones that are currently available.
+        {i}  {#1{an--quid_faciam--solesmes}{4E}}       %1st after Epiphany %%% TO DO %%%%
+        {ii} {#1{an--deficiente_vino--solesmes}{1f}} %2nd after Epiphany
+        {iii}{#1{}{}}   %3rd after Epiphany %% TODO %%
+        {iv} {#1{an--domine_salva_nos--solesmes}{1g}}   %4th after Epiphany %% TODO %%
+        {v}  {#1{an--cum_vocatus_fueris--solesmes}{7a}}  %5th after Epiphany %% TODO %%
+        {vi} {#1{an--quid_vobis_videtur--solesmes}{4E}}  %6th after Epiphany %% TODO %%
+      }}% end epiphany cases
+    {septuagesima}{\IfEqCase{#3}{% the sundays after Septuagesima
+      {i}      {#1{an--dixit_paterfamilias--solesmes}{7a}} %Septuagesima Sunday
+      {ii}     {#1{an--vobis_datum_est--solesmes_1961}{6F}} %Quinquagesima Sunday
+      {iii}    {#1{}{}}
+      }}% end Septuagesima cases
     {quadragesima}{\IfEqCase{#3}{% Only 4th Sunday implemented.
       {i}      {#1{}{}}
       {ii}     {#1{}{}}
@@ -156,6 +198,8 @@
 \newcommand\conclusio[1]{%
   \IfEqCase{#1}{%
     {adventus}{\versiculus{or--benedicamus_adventus--solesmes} \vskip .5cm \text{fidelium}}
+    {epiphania}{\versiculus{or--benedicamus_xi--solesmes} \vskip .5cm \text{fidelium}}
+    {septuagesima}{\versiculus{or--benedicamus_xi--solesmes} \vskip .5cm \text{fidelium}}
     {quadragesima}{\versiculus{or--benedicamus_adventus--solesmes} \vskip .5cm \text{fidelium}}
     {pentecostes}{\versiculus{or--benedicamus_xi--solesmes} \vskip .5cm \text{fidelium}}
     {defunctorum}{\input{texti/conclusio-#1}}
