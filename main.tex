@@ -6,7 +6,7 @@
 %%% Preferences to change are here.
 %%% Note that only the Sundays xiv-xv are supported for the moment
 %%% Others will be added later.
-\newcommand{\tempus}{septuagesima}%{quadragesima}%{pentecostes}%{adventus}%% what season or proper
+\newcommand{\tempus}{passio}%{septuagesima}%{quadragesima}%{pentecostes}%{adventus}%% season
 \newcommand{\numerus}{ii}%{xiii}%% CHANGE THIS TO WHICH SUNDAY AFTER PENTECOST
 \newcommand{\lang}{english}%{polish} %which language translation. %
 %%%% Note that the translation files are in the 'translatio' directory
@@ -42,9 +42,9 @@
 \begin{document}
   \begin{center}%%% TODO: Make this title programmatically. For now, manual edit.
     \huge{\textbf{Dominica ad Vesperas}}\\
-    %\large{\SUNDAY\ \TIME}%%
-    \large{Quinquagesima Sunday }%
-  \end{center}
+    \large{\SUNDAY\ \TIME}%%
+    %\large{Quinquagesima Sunday }%
+  \end{center}%
 %%%
 %%% Initium is calculated according to the office
 \initium %% this is defined in the calendar file
@@ -60,6 +60,7 @@
 %
 \capitulum{\numerus}{\tempus}% Chapter, see calendar.sty
 
+\clearpage
 %% hymnarium macro adds section, some offices have no hymn
 \hymnarium{\tempus}% hymn according to time
 
